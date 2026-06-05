@@ -3,6 +3,22 @@
     --primary: #000000;
     --secondary: #ffffff;
     --secondary-transp: rgba(255, 255, 255, 0.4);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+body {
+    padding: 0;
+    margin: 0;
 }
 
 h1 {
@@ -26,12 +42,28 @@ h1 {
 }
 
 .linkbutton {
-    text-decoration: none;
     font-size: 24px;
+    text-shadow: var(--primary);
+    
+    transition: color 200ms;
+    transition: filter 200ms;
+    transition: transform 200ms;
+    -webkit-transition: -webkit-filter 200ms;
 }
 
 .linkbutton:hover {
-    text-decoration: none;
+    color: var(--secondary);
+    -webkit-text-stroke-color: var(--primary);
+    -webkit-text-stroke-width: 4px;
+    paint-order: stroke fill;
+    filter: drop-shadow(-2px 2px var(--primary));
+    -webkit-filter: drop-shadow(-2px 2px var(--primary));
+    transform: translate(2px, -2px);
+    
+    transition: color 200ms;
+    transition: filter 200ms;
+    transition: transform 200ms;
+    -webkit-transition: -webkit-filter 200ms;
 }
 
 .navbar {
@@ -41,6 +73,7 @@ h1 {
     padding-right: 32px;
     padding-top: 24px;
     padding-bottom: 24px;
+    z-index: 999;
 }
 
 .navbar--colors-main {
@@ -50,6 +83,16 @@ h1 {
 
 .navbar--colors-sub {
     background-color: var(--secondary);
+}
+
+.section-container {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+#navbar-main {
+    position: fixed;
+    width: 100%;
 }
 
 #navbar-links {
@@ -64,4 +107,26 @@ h1 {
     background-image: url(images/olympia1.jpeg);
     background-size: cover;
     height: 100vh;
+}
+
+#dummy-h1 {
+    opacity: 0;
+}
+
+#content-section1 {
+    margin-top: 4px;
+}
+
+.image-container {
+    background-color: var(--primary);
+}
+
+.image {
+    height: 80vh;
+    transition: transform 200ms;
+}
+
+.image:hover {
+    transform: translate(4px, -4px);
+    transition: transform 200ms;
 }
