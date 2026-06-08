@@ -3,6 +3,7 @@
     scroll-behavior: smooth;
     --color-dark: #000000;
     --color-light: #ffffff;
+    --site-padding: 108px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -71,7 +72,7 @@ h1 {
 }
 
 .linkbutton {
-    font-size: 24px;
+    font-size: 20px;
     text-shadow: var(--primary);
     
     transition: color 200ms;
@@ -98,8 +99,8 @@ h1 {
 .navbar {
     position: sticky;
     top: 0;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: var(--site-padding);
+    padding-right: var(--site-padding);
     padding-top: 24px;
     padding-bottom: 24px;
     z-index: 9;
@@ -115,8 +116,9 @@ h1 {
 }
 
 .section-container {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: var(--site-padding);
+    padding-right: var(--site-padding);
+    padding-bottom: 64px;
 }
 
 #navbar-main {
@@ -147,6 +149,23 @@ h1 {
     align-items: stretch;
     max-height: 86vh;
     gap: 16px;
+}
+
+#content-section2 {
+    align-items: flex-start;
+    gap: 16px;
+}
+
+#footer {
+    background-color: var(--primary);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: var(--site-padding);
+    padding-right: var(--site-padding);
+}
+
+#footer > div > p {
+    color: var(--secondary);
 }
 
 .image-container {
@@ -220,7 +239,7 @@ h1 {
 }
 
 .social-icon {
-    color: red;
+    color: var(--primary);
 }
 
 .social-icon:hover {
@@ -231,6 +250,9 @@ h1 {
     filter: drop-shadow(-2px 2px var(--primary));
     -webkit-filter: drop-shadow(-2px 2px var(--primary));
     transform: translate(2px, -2px);
+
+    stroke-width: 2px;
+    stroke-color: var(--primary);
     
     transition: color 200ms;
     transition: filter 200ms;
