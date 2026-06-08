@@ -144,12 +144,12 @@ h1 {
 
 #content-section1 {
     margin-top: 4px;
-    align-items: stretch;
 }
 
 .image-container {
     background-color: var(--primary);
     background-size: cover;
+    height: 80vh;
     aspect-ratio: 0.67;
 
     transition: transform 200ms;
