@@ -30,7 +30,7 @@ a {
 p {
     margin:0;
     margin-top: 6px;
-    font-size: 24px;
+    font-size: 20px;
     color: var(--primary);
 }
 
@@ -74,6 +74,11 @@ h1 {
 .linkbutton {
     font-size: 20px;
     text-shadow: var(--primary);
+
+    color: var(--primary);
+    -webkit-text-stroke-color: var(--secondary);
+    -webkit-text-stroke-width: 4px;
+    paint-order: stroke fill;
     
     transition: color 200ms;
     transition: filter 200ms;
@@ -107,8 +112,9 @@ h1 {
 }
 
 .navbar--colors-main {
-    background-color: var(--secondary-transp);
-    backdrop-filter: blur(8px);
+    /* background-color: var(--secondary-transp);
+    backdrop-filter: blur(8px); */
+    color: var(--secondary);
 }
 
 .navbar--colors-sub {
