@@ -1,9 +1,24 @@
 :root {
     font-family: "Helvetica";
-    --primary: #000000;
-    --secondary: #ffffff;
-    --secondary-transp: rgba(255, 255, 255, 0.4);
     scroll-behavior: smooth;
+    --color-dark: #000000;
+    --color-light: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary: var(--color-dark);
+        --secondary: var(--color-light);
+        --secondary-transp: rgba(255, 255, 255, 0.4);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: var(--color-light);
+        --secondary: var(--color-dark);
+        --secondary-transp: rgba(0, 0, 0, 0.4);
+    }
 }
 
 a {
@@ -15,6 +30,7 @@ p {
     margin:0;
     margin-top: 6px;
     font-size: 24px;
+    color: var(--primary);
 }
 
 a:hover {
@@ -25,12 +41,14 @@ a:hover {
 body {
     padding: 0;
     margin: 0;
+    background-color: var(--secondary);
 }
 
 h1 {
     padding:0;
     margin:0;
     font-size: 36px;
+    color: var(--primary);
 }
 
 .container {
@@ -49,6 +67,7 @@ h1 {
 
 .container-text {
     align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .linkbutton {
@@ -125,12 +144,12 @@ h1 {
 
 #content-section1 {
     margin-top: 4px;
+    align-items: stretch;
 }
 
 .image-container {
     background-color: var(--primary);
     background-size: cover;
-    height: 80vh;
     aspect-ratio: 0.67;
 
     transition: transform 200ms;
@@ -149,7 +168,7 @@ h1 {
 }
 
 .image-text {
-    color: var(--secondary);
+    color: var(--color-light);
     font-size: 36px;
     rotate: -12deg;
     font-style: italic;
@@ -158,8 +177,8 @@ h1 {
 
 .image-container:hover > p {
     paint-order: stroke fill;
-    filter: drop-shadow(-4px 4px var(--primary));
-    -webkit-filter: drop-shadow(-4px 4px var(--primary));
+    filter: drop-shadow(-4px 4px var(--color-dark));
+    -webkit-filter: drop-shadow(-4px 4px var(--color-dark));
     transform: translate(4px, -4px);
     
     transition: color 200ms;
