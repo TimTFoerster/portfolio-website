@@ -144,17 +144,21 @@ h1 {
 
 #content-section1 {
     margin-top: 4px;
+    align-items: stretch;
+    max-height: 86vh;
+    gap: 16px;
 }
 
 .image-container {
     background-color: var(--primary);
-    background-size: cover;
-    height: 80vh;
-    aspect-ratio: 0.67;
-
     transition: transform 200ms;
+    position: relative;
+}
 
-    justify-content: space-around;
+.image-container > p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .image-container:hover {
@@ -167,19 +171,29 @@ h1 {
     -webkit-filter: drop-shadow(-4px 4px var(--primary));
 }
 
+.image-object {
+    width: 100%;
+    max-height: 86vh;
+}
+
 .image-text {
     color: var(--color-light);
     font-size: 36px;
-    rotate: -12deg;
     font-style: italic;
     text-transform: uppercase;
+    rotate: -12deg;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .image-container:hover > p {
     paint-order: stroke fill;
     filter: drop-shadow(-4px 4px var(--color-dark));
     -webkit-filter: drop-shadow(-4px 4px var(--color-dark));
-    transform: translate(4px, -4px);
+    /* transform: translate(4px, -4px); */
     
     transition: color 200ms;
     transition: filter 200ms;
